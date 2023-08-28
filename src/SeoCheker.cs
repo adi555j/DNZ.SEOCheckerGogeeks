@@ -221,7 +221,7 @@ namespace DNZ.SEOChecker
                     // Good SEO score The page title contains the focus keyword, at the beginning which is considered to improve rankings.
                     // The page title contains the focus keyword, but it does not appear at the beginning; try and move it to the beginning.
                     if (!result.Title.StartsWith(result.Keyword, StringComparison.OrdinalIgnoreCase))
-                        result.TitleMessages.Add(ErrorMessage.TitleDoesNotStartingFocusedKeyword, false, result.Title, result.Keyword);//{0}Title - {1}Keyword
+                        result.TitleMessages.Add(ErrorMessage.TitleDoesNotContainFocusedKeyword, false, result.Title, result.Keyword);//{0}Title - {1}Keyword
                     else
                         result.TitleScore++;
                 }

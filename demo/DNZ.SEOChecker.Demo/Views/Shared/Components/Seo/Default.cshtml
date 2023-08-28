@@ -1,13 +1,13 @@
 ﻿@model DNZ.SEOChecker.SeoResult
 
-<div style="text-align: right; display: inline-block; background-color: whitesmoke; border: 1px solid silver; margin-bottom: 10px;">
+<div style="text-align: left; display: inline-block; background-color: whitesmoke; border: 1px solid silver; margin-bottom: 10px;">
     <span style="color: #fff;display: block;padding: 10px;text-align: center;font-weight: bold; background-color: @(Model.BackgroundColor)">
-        امتیاز سئو : @Model.SeoScore/100
+        SEO Score: @Model.SeoScore/100
     </span>
     <div style="padding: 10px 15px;">
         @if (Model.TitleMessages.Any())
         {
-            <strong>عنوان</strong>
+            <strong>Title</strong>
             <br />
             <ul class="ulSeo">
                 @foreach (var item in Model.TitleMessages.OrderByDescending(p => p.IsError))
@@ -21,7 +21,7 @@
         }
         @if (Model.KeywordMessages.Any())
         {
-            <strong>کلمه کلیدی</strong>
+            <strong>Keywords</strong>
             <br />
             <ul class="ulSeo">
                 @foreach (var item in Model.KeywordMessages.OrderByDescending(p => p.IsError))
@@ -35,7 +35,7 @@
         }
         @if (Model.UrlMessages.Any())
         {
-            <strong>آدرس</strong>
+            <strong>URL</strong>
             <br />
             <ul class="ulSeo">
                 @foreach (var item in Model.UrlMessages)
@@ -49,7 +49,7 @@
         }
         @if (Model.MetaDescriptionMessages.Any())
         {
-            <strong>متا تگ توضیحات</strong>
+            <strong>Meta Description</strong>
             <br />
             <ul class="ulSeo">
                 @foreach (var item in Model.MetaDescriptionMessages.OrderByDescending(p => p.IsError))
@@ -63,7 +63,7 @@
         }
         @if (Model.TextMessages.Any())
         {
-            <strong>متن</strong>
+            <strong>Text</strong>
             <br />
             <ul class="ulSeo">
                 @foreach (var item in Model.TextMessages.OrderByDescending(p => p.IsError))

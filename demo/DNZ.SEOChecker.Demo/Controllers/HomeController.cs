@@ -15,7 +15,7 @@ namespace DNZ.SEOChecker.Demo.Controllers
         public async Task<IActionResult> Index()
         {
             using var httpClient = new HttpClient();
-            var html = await httpClient.GetStringAsync("https://fa.wikipedia.org/wiki/%D8%A8%D9%87%DB%8C%D9%86%D9%87%E2%80%8C%D8%B3%D8%A7%D8%B2%DB%8C_%D9%85%D9%88%D8%AA%D9%88%D8%B1_%D8%AC%D8%B3%D8%AA%D8%AC%D9%88");
+            var html = await httpClient.GetStringAsync("https://www.gogeeks.in/Details/2/AMD-Ryzen-3-3200G-Processor-with-Radeon-RX-Vega-8-Graphics-(4-Cores-4-Threads-with-Max-Boost-Clock-of-up-to-4GHz,-Base-Clock-of-3.6GHz,-AM4-Socket-and-6MB-Cache-Memory)");
 
             var htmlDoc = new HtmlDocument() { OptionFixNestedTags = true };
             htmlDoc.LoadHtml(html);
@@ -23,10 +23,10 @@ namespace DNZ.SEOChecker.Demo.Controllers
 
             var seoInput = new SeoInput
             {
-                Title = "بهینه‌سازی موتور جستجو",
-                Url = "بهینه‌سازی_موتور_جستجو",
+                Title = "Search Engine Optimization",
+                Url = "Search_Engine_Optimization",
                 Keyword = "SEO",
-                MetaDescription = "بهینه‌سازی موتور جستجو ؛ (به انگلیسی: Search Engine Optimization)، به‌اختصار سئو (به انگلیسی: SEO)، یک روند مناسب برای بهتر دیده‌شدن یک وب‌سایت یا یک صفحه وب در نتایج جستجو طبیعی یک موتور جستجو است.",
+                MetaDescription = "Search Engine Optimization (SEO), abbreviated as SEO, is a suitable process for enhancing the visibility of a website or a web page in the organic search results of a search engine.",
                 Text = content
             };
             return View(seoInput);

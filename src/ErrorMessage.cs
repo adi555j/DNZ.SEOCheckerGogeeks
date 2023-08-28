@@ -4,165 +4,157 @@ namespace DNZ.SEOChecker
 {
     internal enum ErrorMessage
     {
-        //Title
-        [MessageInfo(GroupName = "Title", Description = "لطفا یک عنوان برای صفحه وارد کنید.")]
+        // Title
+        [MessageInfo(GroupName = "Title", Description = "Please enter a title for the page.")]
         TitleIsEmpty,
-        [MessageInfo(GroupName = "Title", Description = "عنوان صفحه {1} کاراکتر دارد که کمتر از مقدار پیشنهادی {2} کاراکتر است.")]//{0}Title - {1}TitleLenght - {2}TitleMinLenght
+        [MessageInfo(GroupName = "Title", Description = "The title of the page has {1} characters, which is less than the recommended value of {2} characters.")] //{0}Title - {1}TitleLength - {2}TitleMinLength
         TitleIsShort,
-        [MessageInfo(GroupName = "Title", Description = "عنوان صفحه {1} کاراکتر دارد که بیشتر از مقدار پیشنهادی {2} کاراکتر است.")]//{0}Title - {1}TitleLenght - {2}TitleMaxLenght
+        [MessageInfo(GroupName = "Title", Description = "The title of the page has {1} characters, which is more than the recommended value of {2} characters.")] //{0}Title - {1}TitleLength - {2}TitleMaxLength
         TitleIsLong,
-        [MessageInfo(GroupName = "Title", Description = "کلمه کلیدی در عنوان صفحه لحاظ نشده است.")]//{0}Title - {1}Keyword
+        [MessageInfo(GroupName = "Title", Description = "The focused keyword is not present in the title of the page.")] //{0}Title - {1}Keyword
         TitleDoesNotContainFocusedKeyword,
-        [MessageInfo(GroupName = "Title", Description = "عنوان صفحه شامل کلمه کلیدی هست، اما در ابتدای عنوان قرار نگرفته، لطفا آن را ابتدای عنوان قرار دهید.")]//{0}Title - {1}Keyword
-        TitleDoesNotStartingFocusedKeyword,
-        [MessageInfo(GroupName = "Title", Description = "تعداد کلمات عنوان {1} عدد است که این بیشتر از مقدار پیشنهادی {2} عدد است.")]//{0}Title - {1}TitleWordsCount - {2}TitleWordsMaxCount
+        [MessageInfo(GroupName = "Title", Description = "The title of the page contains the focused keyword, but it is not at the beginning of the title. Please place it at the beginning of the title.")] //{0}Title - {1}Keyword
+        TitleDoesNotStartWithFocusedKeyword,
+        [MessageInfo(GroupName = "Title", Description = "The number of words in the title is {1}, which is more than the recommended maximum of {2} words.")] //{0}Title - {1}TitleWordsCount - {2}TitleWordsMaxCount
         TitleWordsAreMoreThan,
-        [MessageInfo(GroupName = "Title", Description = "تعداد کلمات عنوان {1} عدد است که این کمتر از مقدار پیشنهادی {2} عدد است.")]//{0}Title - {1}TitleWordsCount - {2}TitleWordsMinCount
+        [MessageInfo(GroupName = "Title", Description = "The number of words in the title is {1}, which is fewer than the recommended minimum of {2} words.")] //{0}Title - {1}TitleWordsCount - {2}TitleWordsMinCount
         TitleWordsAreFewerThan,
-        [MessageInfo(GroupName = "Title", Description = "عنوان صفحه تکراری است و در پست های قبلی استفاده شده است.")]//{0}Title
+        [MessageInfo(GroupName = "Title", Description = "The title of the page is duplicate and has been used in previous posts.")] //{0}Title
         TitleDuplicated,
-        [MessageInfo(GroupName = "Title", Description = "میزان شباهت عنوان با متاتگ توضیحات {1}% است که این کمتر از مقدار پیشنهادی {2}% است.")]//{0}Title - {1}CurrentDensity - {2}MinDensity
+        [MessageInfo(GroupName = "Title", Description = "The similarity between the title and the meta description is {1}%, which is less than the recommended value of {2}%.")] //{0}Title - {1}CurrentDensity - {2}MinDensity
         TitleDoesNotMatchMetaDescription,
-        //TitleContainStopWords,
-        [MessageInfo(GroupName = "Title", Description = "میزان شباهت عنوان با متن {1}% است که این کمتر از مقدار پیشنهادی {2}% است.")] //{0}Title - {1}CurrentDensity - {2}MinDensity
+        [MessageInfo(GroupName = "Title", Description = "The similarity between the title and the content is {1}%, which is less than the recommended value of {2}%.")] //{0}Title - {1}CurrentDensity - {2}MinDensity
         TitleDoesNotMatchContent,
 
-        //Keyword
-        [MessageInfo(GroupName = "Keyword", Description = "کلمه کلیدی برای این صفحه تعیین نشده است. لطفا یک کلمه کلیدی پر مخاطب که در متن شما وجود دارد را انتخاب کنید.")]
+
+        // Keyword
+        [MessageInfo(GroupName = "Keyword", Description = "No keyword has been specified for this page. Please select a relevant keyword from the text.")]
         KeywordIsEmpty,
-        [MessageInfo(GroupName = "Keyword", Description = "کلمه کلیدی \"{0}\" تکراری است و در پست های قبلی استفاده شده است.")]//{0}Keyword
+        [MessageInfo(GroupName = "Keyword", Description = "The keyword \"{0}\" is duplicate and has been used in previous posts.")] //{0}Keyword
         KeywordDuplicated,
-        [MessageInfo(GroupName = "Keyword", Description = "کلمه کلیدی شامل {2} کلمه خیلی عمومی {1} است. آنها را پاک کنید.")]//{0}Keyword - {1}StopWordsSentence - {2}StopWordsCount
+        [MessageInfo(GroupName = "Keyword", Description = "The keyword contains {2} highly generic words: {1}. Please remove them.")] //{0}Keyword - {1}StopWordsSentence - {2}StopWordsCount
         KeywordContainStopWords,
 
-        //MetaDescription
-        [MessageInfo(GroupName = "MetaDescription", Description = "متای توضیحات مشخص نشده است. موتور های جستجو قسمتی از متن صفحه را به جای آن نشان خواهند داد.")]
+        // Meta Description
+        [MessageInfo(GroupName = "MetaDescription", Description = "No meta description is specified. Search engines will display a portion of the page text instead.")]
         MetaDescriptionIsEmpty,
-        [MessageInfo(GroupName = "MetaDescription", Description = "متا تگ توضیحات تعریف شده است اما کلمه کلیدی \"{0}\" در آن دیده نمی شود.")] //{0}Keywords
+        [MessageInfo(GroupName = "MetaDescription", Description = "A meta description tag is defined, but the keyword \"{0}\" is not present in it.")] //{0}Keywords
         MetaDescriptionDoesNotContainFocusedKeyword,
-        [MessageInfo(GroupName = "MetaDescription", Description = "{1} جمله در متاتگ توضیحات بیش از {2} کلمه دارد. لطفا آن را کاهش دهید.")]//{0}MetaDescSentencesCount - {1}MaxWordsSentencesCount - {2}MetaDescriptionSentencesWordsMaxCount
-        MetaDescriptionContainSentencesMoreThanWords,
-        [MessageInfo(GroupName = "MetaDescription", Description = "متاتگ توضیحات {0} کاراکتر دارد که این کمتر از مقدار پیشنهادی {1} کاراکتر است.")]//{0}MetaDescLenght - {1}MetaDescriptionMinLenght
+        [MessageInfo(GroupName = "MetaDescription", Description = "The meta description tag has {0} characters, which is less than the recommended value of {1} characters.")] //{0}MetaDescLength - {1}MetaDescriptionMinLength
         MetaDescriptionIsShort,
-        [MessageInfo(GroupName = "MetaDescription", Description = "متاتگ توضیحات {0} کاراکتر دارد که این بیشتر از مقدار پیشنهادی {1} کاراکتر است.")]//{0}MetaDescLenght - {1}MetaDescriptionMaxLenght
+        [MessageInfo(GroupName = "MetaDescription", Description = "{1} جمله در متاتگ توضیحات بیش از {2} کلمه دارد. لطفا آن را کاهش دهید.")]//{0}MetaDescSentencesCount - {1}MaxWordsSentencesCount - {2}MetaDescriptionSentencesWordsMaxCount
+        MetaDescriptionContainSentencesMoreThanWords, 
+        [MessageInfo(GroupName = "MetaDescription", Description = "The meta description tag has {0} characters, which is more than the recommended value of {1} characters.")] //{0}MetaDescLength - {1}MetaDescriptionMaxLength
         MetaDescriptionIsLong,
-        [MessageInfo(GroupName = "MetaDescription", Description = "متاتگ توضیحات شامل {0} کلمه است که این بیشتر از مقدار پیشنهادی {1} است.")]//{0}MetaDescWordsCount - {1}MetaDescriptionWordsMaxCount
+        [MessageInfo(GroupName = "MetaDescription", Description = "The meta description tag contains {0} words, which is more than the recommended maximum of {1} words.")] //{0}MetaDescWordsCount - {1}MetaDescriptionWordsMaxCount
         MetaDescriptionWordsAreMoreThan,
-        [MessageInfo(GroupName = "MetaDescription", Description = "متاتگ توضیحات شامل {0} کلمه است که این کمتر از مقدار پیشنهادی {1} است.")]//{0}MetaDescWordsCount - {1}MetaDescriptionWordsMinCount
+        [MessageInfo(GroupName = "MetaDescription", Description = "The meta description tag contains {0} words, which is fewer than the recommended minimum of {1} words.")] //{0}MetaDescWordsCount - {1}MetaDescriptionWordsMinCount
         MetaDescriptionWordsAreFewerThan,
-        [MessageInfo(GroupName = "MetaDescription", Description = "تراکم کلمات خیلی عمومی {2} متاتگ توضیحات {0}% است که این مقدار بیش از مقدار پیشنهادی {1}% است")]//{0}CurrentDensity - {1}MaxDensity - {2}StopWordsSentence
+        [MessageInfo(GroupName = "MetaDescription", Description = "The density of highly generic words ({2}) in the meta description tag is {0}%, which is more than the recommended value of {1}%. Please remove them.")] //{0}CurrentDensity - {1}MaxDensity - {2}StopWordsSentence
         MetaDescriptionContainMoreThanStopWords,
-        [MessageInfo(GroupName = "MetaDescription", Description = "میزان شباهت متاتگ توضیحات با متن صفحه {0}% است که این کمتر از مقدار پیشنهادی {1}% است.")] //{0}CurrentDensity - {1}MinDensity
+        [MessageInfo(GroupName = "MetaDescription", Description = "The similarity between the meta description and the content is {0}%, which is less than the recommended value of {1}%.")] //{0}CurrentDensity - {1}MinDensity
         MetaDescriptionDoesNotMatchContent,
-        [MessageInfo(GroupName = "MetaDescription", Description = "متاتگ توضیحات تکراری است و در پست های قبلی استفاده شده است")]
+        [MessageInfo(GroupName = "MetaDescription", Description = "The meta description is duplicate and has been used in previous posts.")]
         MetaDescriptionDuplicated,
 
         //Text
-        [MessageInfo(GroupName = "Text", Description = "متن خالی است، لطفا متن را وارد کنید.")]
+        [MessageInfo(GroupName = "Text", Description = "The text is empty, please enter some text.")]
         TextIsEmpty,
-        [MessageInfo(GroupName = "Text", Description = "متن {0} خطای html ایی دارد.")]//{0}HtmlParseErrorCount
+        [MessageInfo(GroupName = "Text", Description = "The text {0} has an HTML parsing error.")]//{0}HtmlParseErrorCount
         TextHasHtmlParseError,
-        [MessageInfo(GroupName = "Text", Description = "متن شامل تگ های html است ولی محتوا ندارد.")]
+        [MessageInfo(GroupName = "Text", Description = "The text contains HTML tags but no content.")]
         TextHasHtmlNotText,
-        [MessageInfo(GroupName = "Text", Description = "متن {0} کاراکتر دارد که این کمتر از حداقل مقدار پیشنهادی {1} است.")]//{0}TextLenght - {1}TextMinLenght
+        [MessageInfo(GroupName = "Text", Description = "The text has {0} characters, which is less than the recommended minimum of {1}.")]//{0}TextLenght - {1}TextMinLenght
         TextIsShort,
-        [MessageInfo(GroupName = "Text", Description = "متن {0} کاراکتر دارد که این بیشتر از مقدار پیشنهادی {1} است.")] //{0}TextLenght - {1}TextMaxLenght
+        [MessageInfo(GroupName = "Text", Description = "The text has {0} characters, which is more than the recommended maximum of {1}.")] //{0}TextLenght - {1}TextMaxLenght
         TextIsLong,
-        [MessageInfo(GroupName = "Text", Description = "متن شامل کلمه کلیدی کانونی نیست.")] //{0}Keyword
+        [MessageInfo(GroupName = "Text", Description = "The text does not contain the focus keyword \"{0}\".")] //{0}Keyword
         TextDoesNotContainFocusKeyword,
-        [MessageInfo(GroupName = "Text", Description = "متن شامل تگ تیتری(h1) نیست.")]
+        [MessageInfo(GroupName = "Text", Description = "The text does not contain a heading tag (h1).")]
         TextDoesNotContainHeading,
-        [MessageInfo(GroupName = "Text", Description = "متن شامل {0} تگ تیتری(h1) است، آنرا به یک عدد کاهش دهید.")] //{0}H1Count
+        [MessageInfo(GroupName = "Text", Description = "The text contains {0} heading tags (h1), reduce it to a single heading.")]
         TextContainMultipleHeading,
-        [MessageInfo(GroupName = "Text", Description = "هیچ تگ زیرتیتری مانند (H2, H3, ...) در نوشته شما نیست.")]
+        [MessageInfo(GroupName = "Text", Description = "There are no subheading tags (H2, H3, etc.) in your text.")]
         TextDoesNotContainAnySubheadings,
-        [MessageInfo(GroupName = "Text", Description = "اولین زیر تیتر شامل کلمه کلیدی \"{0}\" نیست")] //{0}Keyword
+        [MessageInfo(GroupName = "Text", Description = "The first subheading does not contain the keyword \"{0}\".")]
         TextFirstHeadingDoesContainKeyword,
-        [MessageInfo(GroupName = "Text", Description = "شما در هیچ کدام از زیرتیتر ها (H2,H3,...) .کلمه کلیدی \"{0}\" استفاده نکرده اید")] //{0}Keyword
+        [MessageInfo(GroupName = "Text", Description = "You haven't used the keyword \"{0}\" in any of the subheadings (H2, H3, ...).")]
         TextSubHeadingsDoesContainKeyword,
-        [MessageInfo(GroupName = "Text", Description = "{0} تیتر/زیرتیتر در متن وجود دارد که کمتر از {1} کارکتر دارد.")]//{0}HeadAndSubheadingsAreFewerLenght - {1}TextSubheadingMinLenght - {2}0Sentences
+        [MessageInfo(GroupName = "Text", Description = "There are {0} heading/subheading(s) in the text that have fewer than {1} characters.")] //{0}HeadAndSubheadingsAreFewerLenght - {1}TextSubheadingMinLenght - {2}0Sentences
         TextSubHeadingsContainFewerThanCharacters,
-        [MessageInfo(GroupName = "Text", Description = "{0} تیتر/زیرتیتر در متن وجود دارد که بیشتر از {1} کارکتر دارد.")]//{0}HeadAndSubheadingsAreMoreLenght - {1}TextSubheadingMaxLenght - {2}0Sentences
+        [MessageInfo(GroupName = "Text", Description = "There are {0} heading/subheading(s) in the text that have more than {1} characters.")] //{0}HeadAndSubheadingsAreMoreLenght - {1}TextSubheadingMaxLenght - {2}0Sentences
         TextSubHeadingsContainMoreThanCharacters,
-        [MessageInfo(GroupName = "Text", Description = "هیچ پاراگرافی (تگ p یا div) در متن دیده نمی شود.")]
+        [MessageInfo(GroupName = "Text", Description = "There are no paragraphs (p or div tags) in the text.")]
         TextDoesNotContainAnyParagraph,
-        [MessageInfo(GroupName = "Text", Description = "هیچ لینکی (تگ a) در متن دیده نمی شود.")]
+        [MessageInfo(GroupName = "Text", Description = "There are no links (a tags) in the text.")]
         TextDoesNotContainAnyLinks,
-        [MessageInfo(GroupName = "Text", Description = "{0} لینک در متن وجود دارد که این مقدار کمتر از حداقل مقدار پیشنهادی {1} است.")]//{0}LinkCount - {1}MinCount
+        [MessageInfo(GroupName = "Text", Description = "There are {0} links in the text, which is fewer than the recommended minimum of {1}.")]//{0}LinkCount - {1}MinCount
         TextLinksAreFewerThan,
-        [MessageInfo(GroupName = "Text", Description = "{0} لینک در متن وجود دارد که این مقدار بیشتر از مقدار پیشنهادی {1} است.")]//{0}LinkCount - {1}MaxCount
+        [MessageInfo(GroupName = "Text", Description = "There are {0} links in the text, which is more than the recommended maximum of {1}.")]//{0}LinkCount - {1}MaxCount
         TextLinksAreMoreThan,
-        [MessageInfo(GroupName = "Text", Description = "در این متن، لینک داخلی (لینک به سایت خودتان) وجود ندارد! یک یا چندتا لینک داخلی مرتبط با پست های سایت به نوشته اضافه کنید.")]//{0}LinkCount
+        [MessageInfo(GroupName = "Text", Description = "There are no internal links (links to your own site) in this text! Add one or more internal links relevant to site posts.")]
         TextDoesNotContainAnyInboundLinks,
-        [MessageInfo(GroupName = "Text", Description = "در این متن، لینک خارجی (لینک به سایت دیگری) وجود ندارد! یک یا چند لینک خارجی مرتبط با محتوای نوشته به سایت های معتبر اضافه کنید.")]//{0}LinkCount
+        [MessageInfo(GroupName = "Text", Description = "There are no external links (links to other sites) in this text! Add one or more external links relevant to the content of the post to reputable sites.")]
         TextDoesNotContainAnyOutboundLinks,
-        [MessageInfo(GroupName = "Text", Description = "تراکم کلمه کلیدی در متن {2}% است که این مقدار کمتر از مقدار پیشنهادی {3}% است. کلمه کلیدی شما {1} بار در متن تکرار شده است")]//{0}Keyword - {1}KeywordRepeatCount - {2}CurrentDensity - {3}MinDensity
+        [MessageInfo(GroupName = "Text", Description = "The keyword density in the text is {2}%, which is lower than the recommended minimum of {3}%. Your keyword \"{0}\" appears {1} times in the text.")]
         TextKeywordDensityIsLow,
-        [MessageInfo(GroupName = "Text", Description = "تراکم کلمه کلیدی در متن {2}% است که این مقدار بیشتر از مقدار پیشنهادی {3}% است. کلمه کلیدی شما {1} بار در متن تکرار شده است")]//{0}Keyword - {1}KeywordRepeatCount - {2}CurrentDensity - {3}MaxDensity
+        [MessageInfo(GroupName = "Text", Description = "The keyword density in the text is {2}%, which is higher than the recommended maximum of {3}%. Your keyword \"{0}\" appears {1} times in the text.")]
         TextKeywordDensityIsHigh,
-        [MessageInfo(GroupName = "Text", Description = "تعداد کلمات این متن {0} عدد است که این مقدار کمتر از حداقل  مقدار پیشنهادی {1} عدد است.")]//{0}TextWordsCount - {1}TextWordsMinCount
+        [MessageInfo(GroupName = "Text", Description = "The word count of this text is {0}, which is fewer than the recommended minimum of {1}.")]
         TextWordsAreFewerThan,
-        [MessageInfo(GroupName = "Text", Description = "تعداد کلمات این متن {0} عدد است که این مقدار بیشتر از حداکثر  مقدار پیشنهادی {1} عدد است.")]//{0}TextWordsCount - {1}TextWordsMaxCount
+        [MessageInfo(GroupName = "Text", Description = "The word count of this text is {0}, which is more than the recommended maximum of {1}.")]
         TextWordsAreMoreThan,
-        [MessageInfo(GroupName = "Text", Description = "تراکم کلمات خیلی عمومی ({2}) این متن {0} عدد است که این مقدار بیشتر از حداکثر  مقدار پیشنهادی {1} عدد است.")]//{0}CurrentDensity - {1}MaxDensity - {2}StopWordsSentence
+        [MessageInfo(GroupName = "Text", Description = "The density of very common words ({2}) in this text is {0}%, which is higher than the recommended maximum of {1}%.")]
         TextContainMoreThanStopWords,
-        [MessageInfo(GroupName = "Text", Description = "تراکم کلمات گذار (Transition Words) موجود در متن {1}% است که این مقدار کمتر از حداقل پیشنهادی {2}% است. {0} جمله در متن شامل کلمه گذار می باشد.")]//{0}TransitionSentencesCount - {1}CurrentDensity - {2}MinDensity
+        [MessageInfo(GroupName = "Text", Description = "The density of transition words in the text is {1}%, which is lower than the recommended minimum of {2}%. {0} sentence(s) in the text include transition words.")]
         TransitionSentencesAreFewerThan,
-        //TextContainIllegalCharacters
 
         //Sentence
-        //SentenceIsShort,
-        //[MessageInfo(GroupName = "Text", Description = "سعی کنید برای خوانایی بیشتر جمله ها رو کوتاه تر کنید.")]
-        //SentenceIsLong,
-        [MessageInfo(GroupName = "Text", Description = "{0} جمله در متن شامل بیش از {1} کلمه است که یعنی {2}% از جملات متن، و این بیش از حداکثر مقدار پیشنهادی {3}% است.")]//{0}MoreWordsSetencesCount - {1}TextSentencesWordsAvgCount - {2}CurrentDensity - {3}MaxDensity
+        [MessageInfo(GroupName = "Text", Description = "{0} sentence(s) in the text contain more than {1} words, which is {2}% of text sentences, and this exceeds the recommended maximum of {3}%.")]
         TextAvgSentencesAreMoreThan,
-        [MessageInfo(GroupName = "Text", Description = "{0} جمله در متن شامل بیش از حداکثر مقدار پیشنهادی {1} کلمه است.")]//{0}MoreWordsSetencesCount - {1}TextSentencesWordsMaxCount
+        [MessageInfo(GroupName = "Text", Description = "{0} sentence(s) in the text contain more than the recommended maximum of {1} words.")]
         TextSentencesContainMoreThanWords,
-        //SentenceVariationIsBad, ********************
-        //combination of long and short sentences
 
         //Paragraph
-        [MessageInfo(GroupName = "Text", Description = "{0} از پاراگراف (تگ p یا div) های موجود در متن بیشتر از حداکثر {1} کلمه پیشنهادی است.")]//{0}ParagrapMoreWordsCount - {1}TextParagrapWordsMaxCount
+        [MessageInfo(GroupName = "Text", Description = "{0} of the paragraphs (p or div tags) in the text have more than the recommended maximum of {1} words.")]
         ParagraphWordsAreMoreThan,
-        [MessageInfo(GroupName = "Text", Description = "{0} از پاراگراف (تگ p یا div) های موجود در متن کمتر از حداقل {1} کلمه پیشنهادی است.")]//{0}ParagrapMoreWordsCount - {1}TextParagrapWordsMinCount
+        [MessageInfo(GroupName = "Text", Description = "{0} of the paragraphs (p or div tags) in the text have fewer than the recommended minimum of {1} words.")]
         ParagraphWordsAreFewerThan,
-        [MessageInfo(GroupName = "Text", Description = "کلمه کلیدی \"{0}\" در پاراگراف اول دیده نمی شود.")]//{0}Keyword
+        [MessageInfo(GroupName = "Text", Description = "The focus keyword \"{0}\" is not present in the first paragraph.")]
         FirstParagraphDoesNotContainFocusedKeyword,
 
         //Image
-        [MessageInfo(GroupName = "Text", Description = "در این نوشته تصویری مشاهده نمی شود. شاید بهتر باشد تصویری اضافه نمایید.")]
+        [MessageInfo(GroupName = "Text", Description = "No images are found in this post. It might be better to add an image.")]
         TextDoesNotContainAnyImage,
-        //ImageSrcIsEmptyOrNotFound,
-        //ImageNotOptimized,
-        //ImageSizeIsOverThan,
-        [MessageInfo(GroupName = "Text", Description = "{0} تصویر از مجموع {1} تصویر موجود در متن، برچسب (alt) ندارد.")]//{0}NoAltCount - {1}ImageCount
+        [MessageInfo(GroupName = "Text", Description = "{0} out of {1} images used in this text do not have an alt tag.")]
         ImagesDoesNotContainAltAttribute,
-        [MessageInfo(GroupName = "Text", Description = "هیچکدام از {1} تصویر استفاده شده در این متن، شامل کلمه کلیدی \"{0}\" در برچسب (alt) نیستند.")]//{0}Keyword - {1}ImageCount
+        [MessageInfo(GroupName = "Text", Description = "None of the {1} images used in this text have the keyword \"{0}\" in the alt attribute.")]
         NoImageContainKeywordInAltAttribute,
-        [MessageInfo(GroupName = "Text", Description = "هیچکدام از {1} تصویر استفاده شده در این متن، شامل کلمه کلیدی \"{0}\" در نام فایل (src) نیستند.")]//{0}Keyword - {1}ImageCount
+        [MessageInfo(GroupName = "Text", Description = "None of the {1} images used in this text have the keyword \"{0}\" in the file name (src attribute).")]
         NoImageContainKeywordInFielName,
 
-        //Url
-        [MessageInfo(GroupName = "Url", Description = "آدرس صفحه خالی است، لطفا یک آدرس مناسب وارد کنید.")]
+
+        [MessageInfo(GroupName = "Url", Description = "The URL is empty, please enter a valid URL.")]
         UrlIsEmpty,
-        [MessageInfo(GroupName = "Url", Description = "آدرس صفحه شامل {0} کاراکتر است که این مقدار کمتر از حداقل مقدار پیشنهادی {1} کاراکتر است")]//{0}UrlLenght - {1}UrlMinLenght
+        [MessageInfo(GroupName = "Url", Description = "The URL contains {0} characters, which is less than the recommended minimum of {1} characters.")]
         UrlIsShort,
-        [MessageInfo(GroupName = "Url", Description = "آدرس صفحه شامل {0} کاراکتر است که این مقدار بیشتر از حداکثر مقدار پیشنهادی {1} کاراکتر است")]//{0}UrlLenght - {1}UrlMaxLenght
+        [MessageInfo(GroupName = "Url", Description = "The URL contains {0} characters, which is more than the recommended maximum of {1} characters.")]
         UrlIsLong,
-        [MessageInfo(GroupName = "Url", Description = "کلمه کلیدی \"{1}\" در آدرس این صفحه لحاظ نشده است.")]//{0}Url - {1}Keyword
+        [MessageInfo(GroupName = "Url", Description = "The focus keyword \"{1}\" is not included in the URL.")]
         UrlDoesNotContainFocusKeyword,
-        [MessageInfo(GroupName = "Url", Description = "آدرس صفحه شامل {0} کلمه است که این مقدار بیشتر از حداکثر مقدار پیشنهادی {1} کلمه است")]//{0}UrlWordsCount - {1}UrlWordsMaxCount
+        [MessageInfo(GroupName = "Url", Description = "The URL contains {0} words, which is more than the recommended maximum of {1} words.")]
         UrlWordsAreMoreThan,
-        [MessageInfo(GroupName = "Url", Description = "آدرس صفحه شامل {0} کلمه است که این مقدار کمتر از حداقل مقدار پیشنهادی {1} کلمه است")]//{0}UrlWordsCount - {1}UrlWordsMinCount
+        [MessageInfo(GroupName = "Url", Description = "The URL contains {0} words, which is fewer than the recommended minimum of {1} words.")]
         UrlWordsAreFewerThan,
-        [MessageInfo(GroupName = "Url", Description = "آدرس این صفحه شامل یک یا بیشتر کلمه خیلی عمومی {2} است، لطفا آنها را حذف کنید.")]//{0}CurrentDensity - {1}MaxDensity - {2}StopWordsSentence "آدرس این صفحه شامل {0}% تراکم کلمه خیلی عمومی {2} است ، لطفا آنها را حذف کنید."
+        [MessageInfo(GroupName = "Url", Description = "The URL includes one or more very common words ({2}), please remove them.")]
         UrlContainMoreThanStopWords,
-        [MessageInfo(GroupName = "Url", Description = "میزان شباهت آدرس با متاتگ توضیحات {1}% است که این کمتر از مقدار پیشنهادی {2}% است.")]//{0}Url - {1}CurrentDensity - {2}MinDensity
+        [MessageInfo(GroupName = "Url", Description = "The similarity between the URL and the meta description is {1}%, which is lower than the recommended minimum of {2}%.")]
         UrlDoesNotMatchMetaDescription,
-        [MessageInfo(GroupName = "Url", Description = "آدرس صفحه تکراری است و در پست های قبلی استفاده شده است")]//{0}Url
+        [MessageInfo(GroupName = "Url", Description = "The URL is duplicated and has been used in previous posts.")]
         UrlDuplicated,
-        [MessageInfo(GroupName = "Url", Description = "میزان شباهت آدرس با متن {1}% است که این کمتر از مقدار پیشنهادی {2}% است.")]//{0}Url - {1}CurrentDensity - {2}MinDensity
+        [MessageInfo(GroupName = "Url", Description = "The similarity between the URL and the content is {1}%, which is lower than the recommended minimum of {2}%.")]
         UrlDoesNotMatchContent,
+
     }
 
     [AttributeUsage(AttributeTargets.Field)]
