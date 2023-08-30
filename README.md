@@ -2,10 +2,4 @@
 
 **SEO Checker and Recommander Plugin (like wordpress Yoast) for ASP.NET Core.**
 
-![Demo](Demo.png)
-
-## Demo
-
-Checkout [DNZ.SEOChecker.Demo](https://github.com/mjebrahimi/DNZ.SEOChecker/tree/master/demo/DNZ.SEOChecker.Demo)
-
-![Demo2](Demo2.png)
+![image](https://github.com/adi555j/DNZ.SEOCheckerGogeeks/assets/29003275/e1b2c1a7-e85c-49d2-bc32-f77279e7010f)
